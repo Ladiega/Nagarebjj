@@ -27,9 +27,16 @@ export async function POST(req: NextRequest) {
     body: JSON.stringify(data),
   })
 
+  // if (!response.ok) {
+  //   const errData = await response.json()
+  //   const message = errData.title || 'Error desconocido en Mailchimp'
+  //   return NextResponse.json({ message }, { status: 400 })
+  // }
+
   if (!response.ok) {
     const errData = await response.json()
-    const message = errData.title || 'Error desconocido en Mailchimp'
+    console.error("Mailchimp error:", errData) // <-- esto aparecerá en logs de Vercel
+    const message = errData.detail || errData.title || 'Error desconocido en Mailchimp'
     return NextResponse.json({ message }, { status: 400 })
   }
 
