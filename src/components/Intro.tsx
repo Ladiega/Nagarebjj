@@ -8,8 +8,8 @@ export default function Intro() {
     <section className="p-5">
       <div>
         <h1 className="font-black text-5xl uppercase">Nagare Bjj</h1>
-        <h4 className="text-red-700 text-2xl font-bold">"El arte de fluir"</h4>
-        <p className=" text-sm mt-5">
+        <h4 className="text-red-700 text-2xl font-bold">El arte de fluir</h4>
+        <p className="text-sm mt-5">
           Te ofrecemos la mejor experiencia y un ambiente muy fraternal .
           Tenemos clases con los mejores profesores, capacitados para llevar tu
           proceso a otro nivel. Encontraras clases de JIU-JITSU Brasileño,

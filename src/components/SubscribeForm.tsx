@@ -26,6 +26,7 @@ export default function SubscribeForm() {
       setMessage(data.message);
       if (res.ok) setEmail("");
     } catch (error) {
+      console.error(error);
       setMessage("Error inesperado.");
     } finally {
       setLoading(false);
