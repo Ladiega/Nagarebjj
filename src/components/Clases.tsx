@@ -6,7 +6,7 @@ export default function CardGrid() {
       title: "BJJ TODOS LOS NIVELES.",
       content:
         "Entrenamiento colectivo de todos los niveles desde principiantes a avanzados.",
-      image: "/img/robinson.jpg",
+      image: "/img/nagarenogicrew.jpeg",
     },
     {
       title: "BJJ FUNDAMENTOS",
@@ -28,7 +28,7 @@ export default function CardGrid() {
   ];
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 p-5">
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 p-5 cursor-pointer">
       {cards.map((card, index) => (
         <div
           key={index}
