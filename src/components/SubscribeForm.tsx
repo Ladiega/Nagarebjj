@@ -36,9 +36,9 @@ export default function SubscribeForm() {
   return (
     <form
       onSubmit={handleSubmit}
-      className="m-5 rounded-md space-y-4 bg-red-700 p-5 flex items-center justify-between"
+      className="m-5 rounded-md space-y-4 bg-red-700 p-5 flex flex-col md:flex-row items-center md:justify-between justify-center"
     >
-      <div>
+      <div className="absolute md:relative">
         <div className="text-white">
           <h1 className="text-4xl font-black">NEWSLETTER:</h1>
           <p className="w-70 mt-5">
