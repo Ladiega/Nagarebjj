@@ -27,8 +27,8 @@ export default function Ubicacion() {
       </div>
       <div className="ml-5 mb-20 mt-5 ">
         <h4 className=" font-bold">Bogotá D.C</h4>
-        <p>Cra. 23#73-75, Barrio San Felipe. </p>
-        <p>Segundo piso.</p>
+        <p>Cra. 20b #73-52, Bogotá, Barrio San Felipe. </p>
+        <p>Piso 3.</p>
       </div>
     </section>
   );

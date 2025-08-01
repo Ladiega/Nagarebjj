@@ -21,8 +21,8 @@ export default function Footer() {
           </div>
           <div className="text-sm">
             <h4>Bogotá D.C.</h4>
-            <p>Cra 23 # 73-75, Barrio San Felipe</p>
-            <p>Segundo piso.</p>
+            <p>Cra. 20b #73-52, Bogotá, Barrio San Felipe</p>
+            <p>Piso 3.</p>
           </div>
           <div className="flex gap-5 pt-5 ">
             <div>
