@@ -5,7 +5,7 @@ import { Menu, X } from "lucide-react";
 
 import Link from "next/link";
 import Image from "next/image";
-import nagarenav from "../../public/img/NagareNav.png";
+import nagarenav from "../../public/img/logo.png";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
