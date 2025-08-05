@@ -1,5 +1,5 @@
 import Image from "next/image";
-import japes from "../../public/img/robinson.jpg";
+
 import ytSimulado from "../../public/img/tatami.png";
 
 export default function SobreNosotros() {
@@ -16,8 +16,8 @@ export default function SobreNosotros() {
             somos un gimnasio, somos una escuela. Formamos personas.
           </p>
           <p className="text-base md:text-lg italic">
-            En japonés, "Nagare" significa "fluir". Y fluir es también una forma
-            de vivir.
+            En japonés, Nagare significa fluir. Y fluir es también una forma de
+            vivir.
           </p>
         </div>
 
