@@ -4,6 +4,7 @@ import Horarios from "@/components/Horarios";
 import Nosotros from "@/components/Nosotros";
 import Intro from "@/components/Intro";
 import Clases from "@/components/Clases";
+import Planes from "@/components/Planes";
 
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
         <Nosotros />
         <Clases />
         <Horarios />
+        <Planes />
         <Ubicacion />
         <SubscribeForm />
       </main>

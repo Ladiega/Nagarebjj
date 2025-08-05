@@ -20,17 +20,17 @@ export default function Navbar() {
           </Link>
         </div>
         <div className="hidden md:block">
-          <ul className="flex  gap-3  font-light text-xs">
-            <li>
+          <ul className="flex  gap-3  font-light text-xs ">
+            <li className="text-white">
               <Link href="/nosotros">NOSOTROS</Link>
             </li>
-            <li>
+            <li className="text-white">
               <Link href="/clases">CLASES</Link>
             </li>
-            <li>
+            <li className="text-white">
               <Link href="/horarios">HORARIOS</Link>
             </li>
-            <li>
+            <li className="text-white">
               <Link href="/ubicacion">UBICACIÓN</Link>
             </li>
             <li>
@@ -40,9 +40,9 @@ export default function Navbar() {
             </li>
           </ul>
         </div>
-        <div>
+        <div className="md:hidden">
           <button
-            className="block md:hidden z-50 cursor-pointer"
+            className="block md:hidden z-50 cursor-pointer text-white "
             onClick={toggleMenu}
             aria-label="Toogle menu"
           >

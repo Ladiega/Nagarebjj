@@ -1,17 +1,35 @@
 import Image from "next/image";
-import tatami from "../../public/img/tatami.png";
+import japes from "../../public/img/robinson.jpg"; // Ajusta esta ruta según tus imágenes
+import ytSimulado from "../../public/img/tatami.png"; // Simulación de video
 
-export default function Nosotros() {
+export default function SobreNosotros() {
   return (
-    <section>
-      <div>
-        <div className="flex justify-center align-middle">
-          <h2 className="text-6xl font-extrabold text-red-700 absolute mt-10">
-            NOSOTROS
-          </h2>
-        </div>
+    <section className="bg-black text-white py-20 px-4">
+      <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+        {/* Lado izquierdo: texto */}
         <div>
-          <Image src={tatami} alt="Tatami" />
+          <h2 className="text-3xl md:text-5xl font-black uppercase mb-6">
+            Sobre nosotros
+          </h2>
+          <p className="text-lg md:text-xl leading-relaxed mb-6">
+            Nagare es una comunidad de práctica que enseña jiu-jitsu brasileño,
+            wrestling y boxeo desde una perspectiva técnica y filosófica. No
+            somos un gimnasio, somos una escuela. Formamos personas.
+          </p>
+          <p className="text-base md:text-lg italic">
+            En japonés, "Nagare" significa "fluir". Y fluir es también una forma
+            de vivir.
+          </p>
+        </div>
+
+        {/* Lado derecho: video simulado */}
+        <div className="relative w-full aspect-video rounded-lg overflow-hidden">
+          <Image
+            src={ytSimulado}
+            alt="Simulación de video de YouTube"
+            fill
+            className="object-cover"
+          />
         </div>
       </div>
     </section>
