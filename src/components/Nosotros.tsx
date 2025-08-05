@@ -1,12 +1,11 @@
 import Image from "next/image";
-import japes from "../../public/img/robinson.jpg"; // Ajusta esta ruta según tus imágenes
-import ytSimulado from "../../public/img/tatami.png"; // Simulación de video
+import japes from "../../public/img/robinson.jpg";
+import ytSimulado from "../../public/img/tatami.png";
 
 export default function SobreNosotros() {
   return (
     <section className="bg-black text-white py-20 px-4">
       <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
-        {/* Lado izquierdo: texto */}
         <div>
           <h2 className="text-3xl md:text-5xl font-black uppercase mb-6">
             Sobre nosotros
@@ -22,7 +21,6 @@ export default function SobreNosotros() {
           </p>
         </div>
 
-        {/* Lado derecho: video simulado */}
         <div className="relative w-full aspect-video rounded-lg overflow-hidden">
           <Image
             src={ytSimulado}
