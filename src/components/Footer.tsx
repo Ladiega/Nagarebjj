@@ -40,22 +40,22 @@ export default function Footer() {
         <div className="text-white relative pt-10 pr-5 text-sm">
           <ul className="flex flex-col gap-3 text-right ">
             <li>
-              <Link href="/" className="hover:text-red-700">
+              <Link href="/nosotros" className="hover:text-red-700">
                 NOSOTROS
               </Link>
             </li>
             <li>
-              <Link href="/" className="hover:text-red-700">
+              <Link href="/clases" className="hover:text-red-700">
                 CLASES
               </Link>
             </li>
             <li>
-              <Link href="/" className="hover:text-red-700">
+              <Link href="/horarios" className="hover:text-red-700">
                 HORARIOS
               </Link>
             </li>
             <li>
-              <Link href="/" className="hover:text-red-700">
+              <Link href="/ubicacion" className="hover:text-red-700">
                 UBICACIÓN
               </Link>
             </li>
