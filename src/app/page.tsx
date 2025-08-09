@@ -5,6 +5,8 @@ import Nosotros from "@/components/Nosotros";
 import Intro from "@/components/Intro";
 import Clases from "@/components/Clases";
 import Planes from "@/components/Planes";
+import Galeria from "@/components/Galeria";
+import Blog from "@/components/Blog";
 
 export default function Home() {
   return (
@@ -15,6 +17,8 @@ export default function Home() {
         <Clases />
         <Horarios />
         <Planes />
+        <Galeria />
+        <Blog />
         <Ubicacion />
         <SubscribeForm />
       </main>

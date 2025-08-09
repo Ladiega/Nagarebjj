@@ -32,6 +32,7 @@ export default function CardGrid() {
             className="relative min-h-[600px] rounded-2xl overflow-hidden shadow-md group"
           >
             <Image
+              sizes="(max-width: 768px) 100vw, 33vw"
               src={card.image}
               alt={card.title}
               fill
