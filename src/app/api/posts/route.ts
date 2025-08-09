@@ -4,7 +4,11 @@ import { NextResponse } from "next/server";
 export async function GET() {
   try {
     const posts = getAllPosts();
-    return NextResponse.json(posts);
+
+    const sortedPosts = [...posts].sort(
+      (a, b) => new Date(b.fecha).getTime() - new Date(a.fecha).getTime()
+    );
+    return NextResponse.json(sortedPosts);
   } catch (error) {
     console.error("Error en /api/posts:", error);
     return NextResponse.json(

@@ -49,7 +49,7 @@ export default function Blog() {
                 <h3 className="text-xl font-bold mt-2">{post.titulo}</h3>
                 <p className="text-sm text-gray-500">{post.fecha}</p>
                 <p className="mt-2 text-gray-700">{post.resumen}</p>
-                <span className="text-blue-500 mt-2 inline-block">
+                <span className="text-red-700 mt-2 inline-block">
                   Leer más →
                 </span>
               </div>

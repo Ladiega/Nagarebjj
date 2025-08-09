@@ -1,6 +1,6 @@
 ---
 titulo: "Uniformes No-Gi de Nagare BJJ hechos por Mons"
-fecha: "2025-08-08"
+fecha: "2025-07-08"
 resumen: "Presentamos los nuevos uniformes de nuestra academia para la práctica de No-Gi, confeccionados por la marca Mons."
 imagen: "/img/galeria/galeria2.jpeg"
 ---

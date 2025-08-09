@@ -30,6 +30,7 @@ export default function Navbar() {
             <li className="text-white">
               <Link href="/horarios">HORARIOS</Link>
             </li>
+
             <li className="text-white">
               <Link href="/ubicacion">UBICACIÓN</Link>
             </li>
