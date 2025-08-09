@@ -4,12 +4,11 @@ import Image from "next/image";
 import { marked } from "marked";
 
 type Props = {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 };
 
-// ✅ Asíncrono
 export default async function BlogPost({ params }: Props) {
-  const { slug } = await Promise.resolve(params); // 👈 esto evita el warning
+  const { slug } = await params; // ✅ Ahora sí se espera el Promise
 
   const post = getPostBySlug(slug);
 
