@@ -42,8 +42,8 @@ export default function SubscribeForm() {
         <div className="text-white">
           <h1 className="text-4xl font-black">NEWSLETTER:</h1>
           <p className="w-70 mt-5">
-            Mantente conectado con nosotros y estar actualizado con nuestras
-            actualizaciones.
+            Mantente al día con todas nuestras novedades, promociones y eventos
+            exclusivos. Sé el primero en saberlo todo.
           </p>
         </div>
         <div className="flex flex-col gap-5 ">
@@ -63,7 +63,7 @@ export default function SubscribeForm() {
             disabled={loading}
             className="bg-white text-black font-bold px-4 py-2 w-40 rounded disabled:opacity-50 cursor-pointer hover:bg-gray-200"
           >
-            {loading ? "Enviando..." : "Suscribirse"}
+            {loading ? "Enviando..." : "Suscribirme"}
           </button>
           {message && (
             <p className="text-sm text-white font-light">{message}</p>

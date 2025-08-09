@@ -3,7 +3,7 @@ import Image from "next/image";
 export default function CardGrid() {
   const cards = [
     {
-      title: "ROBINSON JIMÉNEZ PERTUS",
+      title: "ROBINSON JIMÉNEZ PERTUZ",
       content: "Profesor y Head Coach de Jiu-Jitsu Brasileño. Segundo Dan.",
       image: "/img/robinson.jpg",
     },
@@ -17,6 +17,11 @@ export default function CardGrid() {
       title: "JHON TACHA",
       content: "Profesor de Wrestling, luchador profesional y peleador de MMA.",
       image: "/img/tacha.jpg",
+    },
+    {
+      title: "RICARDO PANCHALO",
+      content: "Profesor de Jiu-Jitsu no Gi, cinturón negro de BJJ.",
+      image: "/img/ricardo.jpeg",
     },
   ];
 

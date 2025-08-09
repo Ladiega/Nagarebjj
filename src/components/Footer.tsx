@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import imageFooter from "../../public/img/NagareNav.png";
 import instagram from "../../public/img/iconinstagram.png";
-import facebook from "../../public/img/iconfacebook.png";
+import fitofan from "../../public/img/fitofan_icon.svg";
 export default function Footer() {
   return (
     <footer className="">
@@ -31,8 +31,8 @@ export default function Footer() {
               </Link>
             </div>
             <div>
-              <Link href="/">
-                <Image src={facebook} alt="facebook icon" width={30} />
+              <Link href="https://fitofan.com/nagarebjj">
+                <Image src={fitofan} alt="fitofan" width={30} />
               </Link>
             </div>
           </div>

@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import wapp from "../../public/img/WhatsApp.svg";
 import bgImage from "../../public/img/nagarenogicrew.jpeg";
+import fitofan from "../../public/img/fitofan_icon.svg";
 
 export default function Intro() {
   return (
@@ -27,11 +28,19 @@ export default function Intro() {
           </p>
 
           <div className="flex flex-col items-center mt-8">
-            <p className="font-light mb-2">¿Estas en Bogotá?</p>
             <Link href="https://wa.me/573505473752" target="_blank">
               <div className="flex items-center gap-2 p-3 border-2 border-white rounded-sm text-white font-bold cursor-pointer hover:bg-white hover:text-black transition">
                 <p>AGENDA TU CLASE DE PRUEBA</p>
                 <Image src={wapp} alt="whatsapp" width={24} />
+              </div>
+            </Link>
+          </div>
+
+          <div className="flex flex-col items-center mt-8">
+            <Link href="https://fitofan.com/nagarebjj" target="_blank">
+              <div className="flex items-center gap-2 p-3 border-2 border-white rounded-sm text-white font-bold cursor-pointer hover:bg-white hover:text-black transition">
+                <p>AGENDA TU CLASE DE PRUEBA</p>
+                <Image src={fitofan} alt="fitofan" width={24} />
               </div>
             </Link>
           </div>
