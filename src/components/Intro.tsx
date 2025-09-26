@@ -13,24 +13,19 @@ export default function Intro() {
           alt="Fondo hero"
           fill
           priority
-          className="object-cover object-center filter grayscale brightness-75"
+          className="object-cover object-center filter grayscale brightness-20"
           sizes="100vw"
         />
 
         <div className="absolute inset-0 z-20 flex flex-col items-center justify-center text-center text-white px-4">
-          <h1 className="font-black text-4xl md:text-6xl uppercase drop-shadow-lg">
-            EL ARTE DE FLUIR
+          <h1 className="font-black text-4xl md:text-6xl drop-shadow-lg">
+            El Arte de fluir
           </h1>
-
-          <p className="text-base md:text-lg mt-5 max-w-xl drop-shadow-lg">
-            Jiu-Jitsu, boxeo, wrestling en el corazón de Bogotá, con técnica,
-            filosofía y comunidad.
-          </p>
 
           <div className="flex flex-col items-center mt-8">
             <Link href="https://wa.me/573505473752" target="_blank">
-              <div className="flex items-center gap-2 p-3 border-2 border-white rounded-sm text-white font-bold cursor-pointer hover:bg-white hover:text-black transition">
-                <p>AGENDA TU CLASE DE PRUEBA</p>
+              <div className="flex items-center gap-2 p-4 border-2 border-white rounded-full text-white font-bold cursor-pointer hover:bg-white hover:text-black transition">
+                <p>Agenda tu clase de prueba</p>
                 <Image src={wapp} alt="whatsapp" width={24} />
               </div>
             </Link>
@@ -38,8 +33,8 @@ export default function Intro() {
 
           <div className="flex flex-col items-center mt-8">
             <Link href="https://fitofan.com/nagarebjj" target="_blank">
-              <div className="flex items-center gap-2 p-3 border-2 border-white rounded-sm text-white font-bold cursor-pointer hover:bg-white hover:text-black transition">
-                <p>AGENDA TU CLASE DE PRUEBA</p>
+              <div className="flex items-center gap-2 p-4 border-2 border-white rounded-full text-white font-bold cursor-pointer hover:bg-white hover:text-black transition">
+                <p>Agenda tu clase de prueba</p>
                 <Image src={fitofan} alt="fitofan" width={24} />
               </div>
             </Link>

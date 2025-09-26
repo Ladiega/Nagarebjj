@@ -15,7 +15,7 @@ export default async function BlogPost({ params }: Props) {
   if (!post) return notFound();
 
   return (
-    <article className="p-6 max-w-3xl mx-auto text-white">
+    <article className="p-6 max-w-3xl mx-auto text-white text-justify">
       <h1 className="text-3xl font-bold mb-2">{post.titulo}</h1>
       <p className="text-sm text-gray-400 mb-4">{post.fecha}</p>
 

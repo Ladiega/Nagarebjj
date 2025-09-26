@@ -12,7 +12,7 @@
     "gray-matter": "^4.0.3",
     "lucide-react": "^0.511.0",
     "marked": "^16.1.2",
-    "next": "15.3.2",
+    "next": "^15.6.0-canary.31",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-markdown": "^10.1.0",
@@ -31,5 +31,6 @@
     "eslint-config-next": "15.3.2",
     "tailwindcss": "^4.1.6",
     "typescript": "^5"
-  }
+  },
+  "jsx": "react-jsx"
 }

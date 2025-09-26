@@ -6,12 +6,12 @@ export default function SobreNosotros() {
   return (
     <section className="bg-black text-white py-20 px-4">
       <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
-        <div>
+        <div className="">
           <h2 className="text-3xl md:text-5xl font-black uppercase mb-6">
             En japonés, Nagare significa fluir. Y fluir es también una forma de
             vivir.
           </h2>
-          <p className="text-lg md:text-xl leading-relaxed mb-6">
+          <p className="text-lg md:text-xl leading-relaxed mb-6 text-justify">
             Nagare es una comunidad de práctica que enseña jiu-jitsu brasileño,
             wrestling y boxeo desde una perspectiva técnica y filosófica. No
             somos un gimnasio, somos una escuela. Formamos personas.

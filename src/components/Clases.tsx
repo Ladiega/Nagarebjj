@@ -30,7 +30,7 @@ export default function CardGrid() {
       <h1 className="text-4xl font-extrabold md:text-6xl text-white text-center mb-10">
         INSTRUCTORES
       </h1>
-      <div className="container mx-auto px-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="container mx-auto px-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6">
         {cards.map((card, index) => (
           <div
             key={index}
@@ -41,7 +41,7 @@ export default function CardGrid() {
               src={card.image}
               alt={card.title}
               fill
-              className="absolute inset-0 object-cover group-hover:scale-105 transition-transform duration-300"
+              className="absolute inset-0 object-cover group-hover:scale-105 transition-transform duration-300 opacity-40"
             />
             <div className="absolute inset-0 bg-black/50 group-hover:bg-black/30 transition-colors duration-300" />
             <div className="relative z-10 p-6 text-white">
