@@ -62,7 +62,7 @@ const planes = [
 export default function Planes() {
   return (
     <div className="px-4">
-      <div className="mt-3 mb-6 text-6xl text-center text-white uppercase font-climate">
+      <div className="mt-3 mb-6 text-4xl text-center text-white uppercase font-climate">
         <h1>Planes y Paquetes</h1>
       </div>
 

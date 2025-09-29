@@ -27,7 +27,7 @@ export default function CardGrid() {
 
   return (
     <section className="bg-black py-10">
-      <h1 className="text-4xl  md:text-6xl text-white text-center mb-10 font-climate">
+      <h1 className="text-3xl  md:text-5xl text-white text-center mb-10 font-climate">
         INSTRUCTORES
       </h1>
       <div className="container mx-auto px-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6">

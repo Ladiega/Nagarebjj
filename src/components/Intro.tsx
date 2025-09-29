@@ -18,7 +18,7 @@ export default function Intro() {
         />
 
         <div className="absolute inset-0 z-20 flex flex-col items-center justify-center text-justify text-white px-4">
-          <h1 className="text-4xl md:text-6xl drop-shadow-lg font-climate ">
+          <h1 className="text-3xl md:text-6xl drop-shadow-lg font-climate ">
             El Arte de fluir
           </h1>
           <p className=" mt-3 font-extralight  ">
