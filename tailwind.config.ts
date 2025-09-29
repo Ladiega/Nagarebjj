@@ -7,7 +7,12 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        druk: ["var(--font-druk)", "ui-sans-serif", "system-ui"],
+        druk: [
+          "var(--font-druk)",
+          "ui-sans-serif",
+          "system-ui",
+          "var(--font-climate)",
+        ],
       },
     },
   },

@@ -7,7 +7,7 @@ export default function SobreNosotros() {
     <section className="bg-black text-white py-20 px-4">
       <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
         <div className="">
-          <h2 className="text-3xl md:text-5xl font-black uppercase mb-6">
+          <h2 className="text-3xl md:text-5xl  font-climate uppercase mb-6">
             En japonés, Nagare significa fluir. Y fluir es también una forma de
             vivir.
           </h2>

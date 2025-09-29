@@ -27,7 +27,7 @@ export default function CardGrid() {
 
   return (
     <section className="bg-black py-10">
-      <h1 className="text-4xl font-extrabold md:text-6xl text-white text-center mb-10">
+      <h1 className="text-4xl  md:text-6xl text-white text-center mb-10 font-climate">
         INSTRUCTORES
       </h1>
       <div className="container mx-auto px-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6">
@@ -44,8 +44,8 @@ export default function CardGrid() {
               className="absolute inset-0 object-cover group-hover:scale-105 transition-transform duration-300 opacity-40"
             />
             <div className="absolute inset-0 bg-black/50 group-hover:bg-black/30 transition-colors duration-300" />
-            <div className="relative z-10 p-6 text-white">
-              <h2 className="text-xl text-red-700 font-bold mb-2">
+            <div className="relative z-10 p-6  mt-50 text-white text-center">
+              <h2 className="text-xl text-red-700 font-climate mb-2">
                 {card.title}
               </h2>
               <p className="text-sm">{card.content}</p>

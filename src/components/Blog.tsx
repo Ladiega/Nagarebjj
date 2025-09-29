@@ -31,7 +31,7 @@ export default function Blog() {
   return (
     <section className="bg-black text-white py-20 px-4">
       <div className="max-w-6xl mx-auto text-justify">
-        <h2 className="text-4xl md:text-5xl font-black text-center uppercase mb-12">
+        <h2 className="text-4xl md:text-5xl text-center uppercase mb-12 font-climate">
           Blog
         </h2>
 

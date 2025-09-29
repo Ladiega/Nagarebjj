@@ -17,9 +17,9 @@ const imagenes = [
 
 export default function Galeria() {
   return (
-    <section className="bg-black py-16 px-4 text-white">
+    <section className="bg-black py-16 px-4 text-white opacity-70">
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-4xl md:text-5xl font-black text-center uppercase mb-12">
+        <h2 className="text-4xl md:text-5xl  text-center uppercase mb-12 font-climate">
           Galería
         </h2>
 

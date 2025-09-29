@@ -1,5 +1,5 @@
 "use client";
-
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 
 const planes = [
@@ -15,16 +15,16 @@ const planes = [
   },
   {
     id: 2,
-    precio: "$270.000",
+    precio: "$270,000",
     titulo: "Plan Mensual Ilimitado",
-    categoria: "ilimitado ",
+    categoria: "Ilimitado ",
     modalidad: "BJJ, Lucha o Boxeo",
     descripcion: "Acceso sin restricción de días.",
     image: "/img/clases/img2.png",
   },
   {
     id: 3,
-    precio: "$250.000",
+    precio: "$250,000",
     titulo: "Tiquetera 12 Clases",
     modalidad: "BJJ, Lucha o Boxeo",
     descripcion: "Válida por 2 meses.",
@@ -32,7 +32,7 @@ const planes = [
   },
   {
     id: 4,
-    precio: "$40.000",
+    precio: "$40,000",
     titulo: "Clase Individual",
     modalidad: "BJJ, Lucha o Boxeo",
     descripcion: "Costo por clase.",
@@ -40,16 +40,16 @@ const planes = [
   },
   {
     id: 5,
-    precio: "$380.000",
+    precio: "$380,000",
     titulo: "Plan Mensual",
-    categoria: "ilimitado 2 modalidades ",
+    categoria: "Ilimitado 2 modalidades ",
     modalidad: "BJJ,Lucha, o boxeo.",
     descripcion: "Acceso sin restricciones de días a 2 disciplinas",
     image: "/img/clases/img5.png",
   },
   {
     id: 6,
-    precio: "$350.000",
+    precio: "$350,000",
     titulo: "Plan Mensual ",
     categoria2: "Limitado 2 modalidades ",
     modalidad: "BJJ, Lucha o Boxeo + Open mat",
@@ -61,50 +61,84 @@ const planes = [
 
 export default function Planes() {
   return (
-    <div>
-      <div className="mt-3 mb-6 text-6xl font-black text-center text-white uppercase">
+    <div className="px-4">
+      <div className="mt-3 mb-6 text-6xl text-center text-white uppercase font-climate">
         <h1>Planes y Paquetes</h1>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 py-12">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 py-12">
         {planes.map((plan) => (
-          <div
-            key={plan.id}
-            tabIndex={0}
-            className="relative w-[350px] h-[350px] overflow-hidden rounded-2xl shadow-lg group mx-auto cursor-pointer focus:outline-none"
-          >
-            <Image
-              src={plan.image}
-              alt={plan.titulo}
-              fill
-              className="object-cover transition-transform duration-500 group-hover:scale-105 group-focus:scale-105 group-active:scale-105"
-            />
-
-            <div className="absolute inset-0 bg-black/50" />
-
-            <div
-              className="absolute inset-x-0 bottom-[-100%] flex flex-col items-center justify-center text-white px-4 transition-all duration-500 ease-out 
-              group-hover:bottom-1/2 group-hover:translate-y-1/2 
-              group-focus:bottom-1/2 group-focus:translate-y-1/2 
-              group-active:bottom-1/2 group-active:translate-y-1/2"
-            >
-              <h2 className="text-4xl font-extrabold mt-10">{plan.precio}</h2>
-              <p className="mt-3 text-md">
-                {plan.titulo}
-                <span className="text-green-300 font-bold">
-                  {plan.categoria}
-                </span>
-                <span className="text-red-500 font-bold">
-                  {plan.categoria2}
-                </span>
-                <span className="font-bold">{plan.modalidad}</span> <br />
-                <span className="text-sm text-gray-300">
-                  {plan.descripcion}
-                </span>
-              </p>
-            </div>
-          </div>
+          <PlanCard key={plan.id} plan={plan} />
         ))}
+      </div>
+    </div>
+  );
+}
+
+function PlanCard({ plan }: { plan: (typeof planes)[0] }) {
+  const ref = useRef<HTMLDivElement>(null);
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setVisible(true);
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.3 }
+    );
+
+    if (ref.current) observer.observe(ref.current);
+
+    return () => {
+      if (ref.current) observer.unobserve(ref.current);
+    };
+  }, []);
+
+  return (
+    <div
+      ref={ref}
+      tabIndex={0}
+      className="relative w-[350px] h-[350px] overflow-hidden rounded-2xl shadow-lg mx-auto cursor-pointer group"
+    >
+      <Image
+        src={plan.image}
+        alt={plan.titulo}
+        fill
+        className="object-cover transition-transform duration-500 group-hover:scale-105"
+      />
+
+      <div className="absolute inset-0 bg-black/50" />
+
+      <div
+        className={`
+          absolute inset-0 flex flex-col justify-center items-center px-4 text-center transition-all duration-700 ease-out
+          
+          /* móvil: aparece con scroll */
+          ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-20"}
+
+          /* desktop: aparece con hover */
+          md:opacity-0 md:translate-y-20
+          md:group-hover:opacity-100 md:group-hover:translate-y-0
+        `}
+      >
+        <div className="absolute top-4 left-1/2 -translate-x-1/2  px-4 py-2 rounded-xl text-4xl font-climate text-white">
+          {plan.precio}
+        </div>
+
+        <div className="mt-12 text-white">
+          <h2 className="text-4xl font-bold">{plan.titulo}</h2>
+          <p className="mt-2 text-sm">
+            <span className="text-green-300 font-bold">{plan.categoria}</span>
+            <span className="text-red-500 font-bold">{plan.categoria2}</span>
+            <span className="font-bold">{plan.modalidad}</span> <br />
+            <span className="text-gray-300">{plan.descripcion}</span>
+          </p>
+        </div>
       </div>
     </div>
   );

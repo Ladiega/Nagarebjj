@@ -40,8 +40,8 @@ export default function SubscribeForm() {
     >
       <div className="absolute md:relative">
         <div className="text-white">
-          <h1 className="text-4xl font-black">NEWSLETTER:</h1>
-          <p className="w-70 mt-5">
+          <h1 className="text-4xl font-climate">NEWSLETTER:</h1>
+          <p className="w-90 mt-5 mb-5 font-extralight">
             Mantente al día con todas nuestras novedades, promociones y eventos
             exclusivos. Sé el primero en saberlo todo.
           </p>

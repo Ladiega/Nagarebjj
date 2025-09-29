@@ -11,6 +11,10 @@
     transform: translateY(0);
   }
 }
+.font-climate {
+  font-family: var(--font-climate);
+}
+
 .animate-fadeIn {
   animation: fadeIn 0.8s forwards;
   transform: translateY(20px);

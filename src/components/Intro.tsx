@@ -18,10 +18,10 @@ export default function Intro() {
         />
 
         <div className="absolute inset-0 z-20 flex flex-col items-center justify-center text-justify text-white px-4">
-          <h1 className="font-black text-4xl md:text-6xl drop-shadow-lg">
+          <h1 className="text-4xl md:text-6xl drop-shadow-lg font-climate ">
             El Arte de fluir
           </h1>
-          <p className=" mt-3 font-extralight ">
+          <p className=" mt-3 font-extralight  ">
             Jiu-Jitsu, boxeo, wrestling en el corazón de Bogotá, <br /> con
             técnica filosofía y comunidad.
           </p>

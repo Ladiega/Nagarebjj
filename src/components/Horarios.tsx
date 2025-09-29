@@ -14,7 +14,7 @@ const images = [
 export default function Horarios() {
   return (
     <section className="w-full bg-black py-10">
-      <h2 className="text-white text-4xl font-extrabold text-center mb-6">
+      <h2 className="text-white text-4xl text-center mb-6 font-climate">
         HORARIOS
       </h2>
       <div className="overflow-x-auto flex gap-4 px-4 snap-x snap-mandatory scroll-smooth scrollbar-hide">
