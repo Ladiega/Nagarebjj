@@ -21,9 +21,9 @@ export default function Intro() {
           <h1 className="text-3xl md:text-6xl drop-shadow-lg font-climate ">
             El Arte de fluir
           </h1>
-          <p className=" mt-3 font-extralight  ">
-            Jiu-Jitsu, boxeo, wrestling en el corazón de Bogotá, <br /> con
-            técnica filosofía y comunidad.
+          <p className=" mt-3 font-extralight text-justify w-auto ">
+            Jiu-Jitsu, boxeo, wrestling en el corazón de Bogotá, con técnica
+            filosofía y comunidad.
           </p>
 
           <div className="flex flex-col items-center mt-8">
