@@ -13,8 +13,7 @@ export default function SobreNosotros() {
           </h2>
           <p className="text-lg md:text-xl leading-relaxed mb-6 text-justify">
             Nagare es una comunidad de práctica que enseña jiu-jitsu brasileño,
-            wrestling y boxeo desde una perspectiva técnica y filosófica. No
-            somos un gimnasio, somos una escuela. Formamos personas.
+            wrestling y boxeo desde una perspectiva técnica y filosófica.
           </p>
         </div>
 
