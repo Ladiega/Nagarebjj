@@ -47,6 +47,8 @@ export default function LeadModal() {
     setShow(false);
   };
 
+  if (!show) return null;
+
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70">
       <div
@@ -134,7 +136,7 @@ export default function LeadModal() {
 
         <button
           onClick={() => setShow(false)}
-          className="mt-4 text-xs text-red-700 font-bold"
+          className="mt-4 text-xs text-red-700 font-black pointer cursor-pointer"
         >
           Cerrar
         </button>
