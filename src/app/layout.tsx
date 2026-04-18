@@ -6,6 +6,8 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
+import LeadModal from "@/components/LeadModal";
+
 const climate = Climate_Crisis({
   subsets: ["latin"],
   weight: ["400"],
@@ -44,6 +46,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${anton.variable} ${climate.variable} antialiased bg-black`}
       >
+        <LeadModal />
         <Navbar />
         {children}
         <Footer />
