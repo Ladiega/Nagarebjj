@@ -94,3 +94,30 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: "Error en servidor" }, { status: 500 });
   }
 }
+
+export async function GET(request: Request) {
+  try {
+    const token = request.headers.get("x-api-key");
+
+    if (token !== process.env.API_SECRET_KEY) {
+      return NextResponse.json({ error: "No autorizado" }, { status: 401 });
+    }
+
+    const { data, error } = await supabaseServer
+      .from("inscripciones")
+      .select("*")
+      .order("fecha", { ascending: false });
+
+    if (error) {
+      return NextResponse.json(
+        { error: "Error obteniendo datos" },
+        { status: 500 },
+      );
+    }
+
+    return NextResponse.json(data);
+  } catch (err) {
+    console.log("GET ERROR:", err);
+    return NextResponse.json({ error: "Error en servidor" }, { status: 500 });
+  }
+}
