@@ -43,7 +43,7 @@ export default function CardGrid() {
               fill
               className="absolute inset-0 object-cover group-hover:scale-105 transition-transform duration-300 opacity-90"
             />
-            <div className="absolute inset-0 bg-black/50 group-hover:bg-black/30 transition-colors duration-300" />
+            <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-300" />
             <div className="relative z-10 p-6  mt-50 text-white text-center">
               <h2 className="text-xl text-red-700 font-climate mb-2">
                 {card.title}
