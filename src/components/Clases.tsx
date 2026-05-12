@@ -23,6 +23,12 @@ export default function CardGrid() {
       content: "Profesor de Jiu-Jitsu no Gi, cinturón negro de BJJ.",
       image: "/img/ricardo.jpeg",
     },
+    {
+      title: "Fabian Solano",
+      content:
+        "Profesor de MMA, peleador profesional de MMA y cinturón morado de BJJ.",
+      image: "/img/fabian.png",
+    },
   ];
 
   return (

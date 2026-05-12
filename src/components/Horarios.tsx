@@ -3,11 +3,11 @@
 import Image from "next/image";
 
 const images = [
-  "/img/horarios/img1.png",
-  "/img/horarios/img2.png",
-  "/img/horarios/img3.png",
-  "/img/horarios/img4.png",
-  "/img/horarios/img5.png",
+  "/img/horarios/img1.jpeg",
+  "/img/horarios/img2.jpeg",
+  "/img/horarios/img3.jpeg",
+  "/img/horarios/img4.jpeg",
+  "/img/horarios/img5.jpeg",
   "/img/horarios/img6.jpeg",
 ];
 
