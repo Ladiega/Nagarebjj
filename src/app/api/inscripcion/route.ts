@@ -9,6 +9,7 @@ export async function POST(req: Request) {
     const email = String(formData.get("email") || "").trim();
     const telefono = String(formData.get("telefono") || "").trim();
     const file = formData.get("file") as File | null;
+    const evento = "Seminario Felipe Carlos Junio 2026";
 
     const website = formData.get("website");
 
@@ -22,6 +23,51 @@ export async function POST(req: Request) {
 
     if (!nombre || !email) {
       return NextResponse.json({ error: "Datos incompletos" }, { status: 400 });
+    }
+
+    const { count, error: countError } = await supabaseServer
+      .from("inscripciones")
+      .select("*", {
+        count: "exact",
+        head: true,
+      })
+      .eq("evento", evento);
+
+    if (countError) {
+      return NextResponse.json(
+        { error: "No fue posible verificar los cupos" },
+        { status: 500 },
+      );
+    }
+
+    if ((count ?? 0) >= 50) {
+      return NextResponse.json(
+        { error: "Lo sentimos, este seminario ya completó sus 50 cupos." },
+        { status: 400 },
+      );
+    }
+
+    const { data: existente, error: existeError } = await supabaseServer
+      .from("inscripciones")
+      .select("id")
+      .eq("email", email)
+      .eq("evento", evento)
+      .maybeSingle();
+
+    if (existeError) {
+      return NextResponse.json(
+        { error: "No fue posible verificar la inscripción." },
+        { status: 500 },
+      );
+    }
+
+    if (existente) {
+      return NextResponse.json(
+        {
+          error: "Este correo ya está inscrito para este seminario.",
+        },
+        { status: 400 },
+      );
     }
 
     let fileUrl = null;
@@ -44,7 +90,7 @@ export async function POST(req: Request) {
       }
 
       const ext = file.name.split(".").pop();
-      const fileName = `${Date.now()}.${ext}`;
+      const fileName = `${Date.now()}-${crypto.randomUUID()}.${ext}`;
 
       // convertir a buffer
       const arrayBuffer = await file.arrayBuffer();
@@ -78,6 +124,7 @@ export async function POST(req: Request) {
         email,
         telefono,
         comprobante_url: fileUrl,
+        evento,
       },
     ]);
 

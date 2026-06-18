@@ -54,7 +54,7 @@ export default function LeadModal() {
       <div
         className="w-full max-w-md  text-white bg-black/70 p-6 rounded-xl"
         style={{
-          backgroundImage: "url('/img/seminarios/NagareSeminar2026.jpeg')",
+          backgroundImage: "url('/img/seminarios/seminarioJunio2026.jpeg')",
 
           backgroundSize: "cover",
 
@@ -126,10 +126,12 @@ export default function LeadModal() {
         </form>
 
         <div className="bg-black/40 mt-2">
-          <h2 className="text-xl font-bold mb-2 ">Seminario Nagare BJJ</h2>
+          <h2 className="text-xl font-bold mb-2 ">
+            Seminario Felipe Carlos XEPA desde Brasil
+          </h2>
 
           <p className="text-sm mb-4">
-            24 de abril · Ascensos + Seminario Valor: $70.000 Cupos limitados
+            23 de Junio Seminario Valor: $50.000 Cupos limitados
           </p>
           <p className="font-black">Consignaciones a la llave Nu: @RJP320</p>
         </div>
