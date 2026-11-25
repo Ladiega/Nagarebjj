@@ -7,10 +7,11 @@ import moneda from "../../public/img/blackCoin.png";
 
 export default function SubscribeForm() {
   const [email, setEmail] = useState("");
+  const [website, setWebsite] = useState("");
   const [message, setMessage] = useState("");
   const [loading, setLoading] = useState(false);
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setLoading(true);
     setMessage("Enviando...");
@@ -19,14 +20,13 @@ export default function SubscribeForm() {
       const res = await fetch("/api/subscribe", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email }),
+        body: JSON.stringify({ email, website }),
       });
 
       const data = await res.json();
       setMessage(data.message);
       if (res.ok) setEmail("");
-    } catch (error) {
-      console.error(error);
+    } catch {
       setMessage("Error inesperado.");
     } finally {
       setLoading(false);
@@ -34,45 +34,79 @@ export default function SubscribeForm() {
   };
 
   return (
-    <form
-      onSubmit={handleSubmit}
-      className="m-5 rounded-md space-y-4 bg-red-700 p-5 flex flex-col md:flex-row items-center md:justify-between justify-center"
-    >
-      <div className="absolute md:relative">
-        <div className="text-white">
-          <h1 className="text-2xl md:text-4xl font-climate">NEWSLETTER:</h1>
-          <p className="w-60 md:w-90  mt-5 mb-5 font-extralight">
-            Mantente al día con todas nuestras novedades, promociones y eventos
-            exclusivos.
-          </p>
+    <section className="m-5 rounded-xl bg-red-700 p-4 shadow-lg sm:p-6">
+      <div className="flex flex-col gap-5 md:flex-row md:items-center md:justify-between md:gap-8">
+        <div className="relative h-64 w-full shrink-0 overflow-hidden rounded-lg bg-black md:h-72 md:w-48">
+          <Image
+            src="/img/seminarios/SeminarioDeGrados2026.jpeg"
+            alt="Flyer del Seminario de Grados 2026"
+            fill
+            className="object-contain p-2"
+            sizes="(max-width: 768px) 100vw, 192px"
+          />
         </div>
-        <div className="flex flex-col gap-5 ">
-          <label htmlFor="" className="text-white">
-            E-mail:
+
+        <form onSubmit={handleSubmit} className="flex flex-1 flex-col gap-3 text-white">
+          <h1 className="text-2xl font-climate sm:text-3xl lg:text-4xl">
+            PRÓXIMO SEMINARIO
+          </h1>
+
+          <div className="space-y-1 rounded-lg bg-black/25 p-4 text-sm font-semibold sm:text-base">
+            <p>
+              Ceremonia de ascensos de fin de año · Seminario de Grados 2026
+            </p>
+            <p>Viernes 4 de diciembre · 6:00 p.m. · Aporte: $70.000 COP</p>
+            <p>Cra. 20B #73-52, piso 3</p>
+            <p>Seminario técnico con Marcela Sánchez y Monkey Alejandro Sevilla</p>
+          </div>
+
+          <label htmlFor="newsletter-email" className="mt-1 text-sm font-semibold">
+            Recibe novedades e información de inscripción. E-mail:
           </label>
           <input
+            id="newsletter-email"
             type="email"
-            placeholder="Tu correo"
+            placeholder="tucorreo@ejemplo.com"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
+            autoComplete="email"
             required
-            className=" p-2 rounded mt-[-20] bg-white w-60"
+            className="w-full max-w-sm rounded-lg p-3 text-base text-black placeholder:text-neutral-500 md:w-72"
           />
+
+          <input
+            type="text"
+            name="website"
+            value={website}
+            onChange={(e) => setWebsite(e.target.value)}
+            tabIndex={-1}
+            autoComplete="off"
+            aria-hidden="true"
+            className="absolute left-[-9999px] h-0 w-0 opacity-0"
+          />
+
           <button
             type="submit"
             disabled={loading}
-            className="bg-white text-black font-bold px-4 py-2 w-40 rounded disabled:opacity-50 cursor-pointer hover:bg-gray-200"
+            className="w-full max-w-sm rounded-lg bg-white px-4 py-3 text-base font-bold text-black cursor-pointer hover:bg-gray-200 disabled:opacity-50 md:w-72"
           >
             {loading ? "Enviando..." : "Suscribirme"}
           </button>
+
           {message && (
-            <p className="text-sm text-white font-light">{message}</p>
+            <p
+              role="status"
+              className="inline-block rounded-lg bg-black/25 px-3 py-2 text-sm font-semibold text-white"
+            >
+              {message}
+            </p>
           )}
+        </form>
+
+        <div className="self-center">
+          <Image src={moneda} alt="moneda" />
         </div>
       </div>
-      <div>
-        <Image src={moneda} alt="moneda" />
-      </div>
-    </form>
+    </section>
   );
 }

@@ -1,28 +1,47 @@
+import { timingSafeEqual } from "node:crypto";
 import { NextResponse } from "next/server";
 import { supabaseServer } from "@/lib/supabaseServer";
+
+const EVENTO = "Ceremonia de Ascensos - Seminario de Grados 2026";
+const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+const TELEFONO_REGEX = /^[0-9+()\s-]{7,20}$/;
 
 export async function POST(req: Request) {
   try {
     const formData = await req.formData();
 
     const nombre = String(formData.get("nombre") || "").trim();
-    const email = String(formData.get("email") || "").trim();
+    const email = String(formData.get("email") || "").trim().toLowerCase();
     const telefono = String(formData.get("telefono") || "").trim();
     const file = formData.get("file") as File | null;
-    const evento = "Seminario Felipe Carlos Junio 2026";
+    const evento = EVENTO;
 
-    const website = formData.get("website");
+    const website = String(formData.get("website") || "").trim();
 
     if (website) {
       return NextResponse.json(
         { error: "Bot detectado" },
-
         { status: 400 },
       );
     }
 
-    if (!nombre || !email) {
-      return NextResponse.json({ error: "Datos incompletos" }, { status: 400 });
+    if (
+      !nombre ||
+      nombre.length > 100 ||
+      email.length > 254 ||
+      !EMAIL_REGEX.test(email)
+    ) {
+      return NextResponse.json(
+        { error: "Datos incompletos o inválidos" },
+        { status: 400 },
+      );
+    }
+
+    if (telefono && !TELEFONO_REGEX.test(telefono)) {
+      return NextResponse.json(
+        { error: "Teléfono inválido" },
+        { status: 400 },
+      );
     }
 
     const { count, error: countError } = await supabaseServer
@@ -89,7 +108,7 @@ export async function POST(req: Request) {
         );
       }
 
-      const ext = file.name.split(".").pop();
+      const ext = file.type === "image/png" ? "png" : "jpg";
       const fileName = `${Date.now()}-${crypto.randomUUID()}.${ext}`;
 
       // convertir a buffer
@@ -145,8 +164,16 @@ export async function POST(req: Request) {
 export async function GET(request: Request) {
   try {
     const token = request.headers.get("x-api-key");
+    const secret = process.env.API_SECRET_KEY;
 
-    if (token !== process.env.API_SECRET_KEY) {
+    const provided = Buffer.from(token ?? "");
+    const expected = Buffer.from(secret ?? "");
+
+    if (
+      !secret ||
+      provided.length !== expected.length ||
+      !timingSafeEqual(provided, expected)
+    ) {
       return NextResponse.json({ error: "No autorizado" }, { status: 401 });
     }
 
