@@ -93,6 +93,7 @@ export default function LeadModal() {
             <p>
               Seminario técnico con Marcela Sánchez y Monkey Alejandro Sevilla
             </p>
+            <p>Pagos llave: @rjp320 </p>
           </div>
 
           <form
@@ -100,7 +101,10 @@ export default function LeadModal() {
             className="flex flex-col gap-4 rounded-xl bg-white/5 p-4 ring-1 ring-white/10 sm:p-5"
           >
             <div>
-              <label htmlFor="lead-nombre" className="mb-1 block text-sm font-semibold">
+              <label
+                htmlFor="lead-nombre"
+                className="mb-1 block text-sm font-semibold"
+              >
                 Nombre
               </label>
               <input
@@ -116,7 +120,10 @@ export default function LeadModal() {
             </div>
 
             <div>
-              <label htmlFor="lead-email" className="mb-1 block text-sm font-semibold">
+              <label
+                htmlFor="lead-email"
+                className="mb-1 block text-sm font-semibold"
+              >
                 Correo
               </label>
               <input
@@ -132,7 +139,10 @@ export default function LeadModal() {
             </div>
 
             <div>
-              <label htmlFor="lead-telefono" className="mb-1 block text-sm font-semibold">
+              <label
+                htmlFor="lead-telefono"
+                className="mb-1 block text-sm font-semibold"
+              >
                 Teléfono (opcional)
               </label>
               <input
@@ -147,7 +157,10 @@ export default function LeadModal() {
             </div>
 
             <div>
-              <label htmlFor="lead-comprobante" className="mb-1 block text-sm font-semibold">
+              <label
+                htmlFor="lead-comprobante"
+                className="mb-1 block text-sm font-semibold"
+              >
                 Comprobante de pago (JPG o PNG, máx. 2MB)
               </label>
               <input
@@ -159,7 +172,9 @@ export default function LeadModal() {
 
                   if (!selectedFile) return;
 
-                  if (!["image/jpeg", "image/png"].includes(selectedFile.type)) {
+                  if (
+                    !["image/jpeg", "image/png"].includes(selectedFile.type)
+                  ) {
                     setError("Solo se permiten imágenes JPG o PNG");
                     setFile(null);
                     return;
